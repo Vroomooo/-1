@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include<stdio.h>
-
 int getmax(int* a,int n)
 {
 	int i,sum = 0,max = 0;
@@ -11,21 +10,17 @@ int getmax(int* a,int n)
 	for (i = 0; i<n; i++)
 	{
 		sum = sum+a[i];
-
 		if (sum<a[i])
 		{
 			sum = a[i];
 		}
-
 		if (sum>max)
 		{
 			max = sum;
 		}
-
 	}
 	return max;
 }
-
 int main()
 {
 	int i,n,max,a[100];
