@@ -1,20 +1,20 @@
 #include <stdlib.h>
 #include<stdio.h>
 
-int getmax(int* arr,int n)
+int getmax(int* a,int n)
 {
-	int sum = 0,max = 0;
-	if (arr==NULL||n<0)
+	int i,sum = 0,max = 0;
+	if (a==NULL||n<0)
 	{
 		return 0;
 	}
-	for (int i = 0; i<n; i++)
+	for (i = 0; i<n; i++)
 	{
-		sum = sum+arr[i];
+		sum = sum+a[i];
 
-		if (sum<arr[i])
+		if (sum<a[i])
 		{
-			sum = arr[i];
+			sum = a[i];
 		}
 
 		if (sum>max)
@@ -28,14 +28,13 @@ int getmax(int* arr,int n)
 
 int main()
 {
-	int arr[100];
-	int n,max;
-	scanf_s("%d",&n);
-	for (int i = 0; i<n; i++)
+	int i,n,max,a[100];
+	scanf("%d",&n);
+	for (i = 0; i<n; i++)
 	{
-		scanf_s("%d",&arr[i]);
+		scanf("%d",&a[i]);
 	}
-	max = getmax(arr,n);
+	max = getmax(a,n);
 	printf("%d",max);
 	return 0;
 }
