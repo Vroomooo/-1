@@ -1,29 +1,41 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include<stdio.h>
+
+int getmax(int* arr,int n)
+{
+	int sum = 0,max = 0;
+	if (arr==NULL||n<0)
+	{
+		return 0;
+	}
+	for (int i = 0; i<n; i++)
+	{
+		sum = sum+arr[i];
+
+		if (sum<arr[i])
+		{
+			sum = arr[i];
+		}
+
+		if (sum>max)
+		{
+			max = sum;
+		}
+
+	}
+	return max;
+}
+
 int main()
 {
-    int count;
-    int a[100];
-    int b[100];
-    int i;
-    int max;
-    scanf("%d",&count);
-    for (i = 0; i<count; i++)
-    {
-        scanf("%d",&a[i]);
-    }
-    b[0] = a[0];
-    max = b[0];
-    for (i = 1; i<count; i++)
-    {
-        if (b[i-1]>0)
-            b[i] = b[i-1]+a[i];
-        else
-            b[i] = a[i];
-        if (b[i]>max)
-            max = b[i];
-    }
-    printf("%d\n",max);
-    return 0;
+	int arr[100];
+	int n,max;
+	scanf_s("%d",&n);
+	for (int i = 0; i<n; i++)
+	{
+		scanf_s("%d",&arr[i]);
+	}
+	max = getmax(arr,n);
+	printf("%d",max);
+	return 0;
 }
